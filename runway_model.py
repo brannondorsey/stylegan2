@@ -6,7 +6,7 @@ import runway
 
 fmt = dict(func=tflib.convert_images_to_uint8, nchw_to_nhwc=True)
 
-@runway.setup(options={'checkpoint': runway.file(extension='.pkl')})
+@runway.setup(options={'checkpoint': runway.file(is_directory=True)})
 def setup(opts):
     global Gs
     tflib.init_tf()
